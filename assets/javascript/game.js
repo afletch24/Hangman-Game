@@ -1,4 +1,4 @@
-var wins = 0;
+var wins = 1;
 var remainingGuesses = 15;
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var wrongGuesses = [];
@@ -9,26 +9,18 @@ console.log(partialWord);
 
 var lives ;
 
+
+
+
 // Get Elements
 var showLives = document.getElementById("myLives");
 
-// User presses key to start.
-function startgame () {
-    remainingGuesses: 15;
-    
-    
-}
-
-// // blanks
-// correctGuesses.innerHTML = partialWord();
-// var correctGuesses = document.getElementById(" ");
 
 
 // Generate Random Word 
 function randomWord(){   
     var wordBank =  ["pistol","puzzle","jumble","jumper","zombie","typing", "enzyme", "quiche","jigsaw", "squeak"];
     var random = wordBank[Math.floor(Math.random() * wordBank.length)];
-    
     return random;
 };
 
@@ -61,6 +53,10 @@ document.onkeyup = function(event){
 
        if(remainingGuesses == -1){
            document.getElementById("guessesRemaining").innerHTML =("Game over");
+           remainingGuesses=0;
+           partialWord;
+           wrongGuesses: [];
+           word;
        }
 
     }
@@ -82,9 +78,15 @@ document.onkeyup = function(event){
    
     if(partialWord.indexOf('-') == -1){
         console.log("you win!");
-        wins++;
         alert("You Win!");
+        document.getElementById("wins").innerHTML =wins;
+        wins++;
+        remainingGuesses= 15;
+        wrongGuesses: [];
+        partialWord;
+        word;
 
+       
     }
     
 
@@ -92,5 +94,9 @@ document.onkeyup = function(event){
 
     
     
+};
+
+var winGame= function(){
+   var wins
 };
     
